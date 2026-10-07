@@ -1,0 +1,60 @@
+/* Custom styles for the Expense Tracker.
+   Most of the design comes from Bootstrap classes. We write our own CSS only when we need to. */
+
+/* ---------- Summary cards with CSS Grid ---------- */
+
+/* On a phone: one column, so the 3 cards are under each other */
+.summary-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+/* From 768px (tablet): 2 columns, so the 4 cards make 2 rows */
+@media (min-width: 768px) {
+  .summary-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* From 992px (desktop): 4 equal columns, so the cards are side by side */
+@media (min-width: 992px) {
+  .summary-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ---------- Chart (bonus) ---------- */
+
+/* Chart.js fills its parent, so the parent decides the height */
+.chart-box {
+  position: relative;
+  height: 280px;
+}
+
+/* ---------- Filter and search ---------- */
+
+/* Keep the filter select from getting too wide */
+.filter-select {
+  width: auto;
+  min-width: 150px;
+}
+
+.search-input {
+  width: 180px;
+}
+
+/* On small phones the search box takes the full width of its line */
+@media (max-width: 575.98px) {
+  .search-input {
+    width: 100%;
+  }
+}
+
+/* ---------- Badges ---------- */
+
+/* The yellow and light-blue badges need dark text to be readable */
+.badge.text-bg-warning,
+.badge.text-bg-info {
+  color: #212529 !important;
+}
